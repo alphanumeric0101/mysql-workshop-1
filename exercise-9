@@ -1,0 +1,20 @@
+mysql> create table hatches(hatch_ID INT AUTO_INCREMENT PRIMARY KEY, Hatch_Date DATETIME, TOTAL INT, Hens INT, Roosters INT, Ready_Date DATETIME, Breed varchar(40), Hatch_Fails INT); 
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> display hatches
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'display hatches' at line 1
+mysql> describe hatches;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| hatch_ID    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| Hatch_Date  | datetime    | YES  |     | NULL    |                |
+| TOTAL       | int(11)     | YES  |     | NULL    |                |
+| Hens        | int(11)     | YES  |     | NULL    |                |
+| Roosters    | int(11)     | YES  |     | NULL    |                |
+| Ready_Date  | datetime    | YES  |     | NULL    |                |
+| Breed       | varchar(40) | YES  |     | NULL    |                |
+| Hatch_Fails | int(11)     | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+8 rows in set (0.01 sec)
