@@ -1,1 +1,12 @@
 show databases;
+
++------------------------+
+| Database               |
++------------------------+
+| information_schema     |
+| c9                     |
+| decodemtl_address_book |
+| mysql                  |
+| performance_schema     |
++------------------------+
+5 rows in set (0.01 sec)
