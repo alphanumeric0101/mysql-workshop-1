@@ -18,3 +18,25 @@ mysql> describe hatches;
 | Hatch_Fails | int(11)     | YES  |     | NULL    |                |
 +-------------+-------------+------+-----+---------+----------------+
 8 rows in set (0.01 sec)
+
+mysql> create table Processing(hatch_ID INT AUTO_INCREMENT PRIMARY KEY, Date DATETIME, TOTAL INT, Hens INT, Roosters INT, Method ENUM('Harvest', 'Accident', 'Culling', 'Predator') DEFAULT 'Harvest');                                                                                                                                                                 
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> alter table Processing Modify Column Method ENUM('Harvest', 'Sickness', 'Accident', 'Culling', 'Predator') DEFAULT 'Harvest'
+    -> ;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe Processing
+    -> ;
++----------+------------------------------------------------------------+------+-----+---------+----------------+
+| Field    | Type                                                       | Null | Key | Default | Extra          |
++----------+------------------------------------------------------------+------+-----+---------+----------------+
+| hatch_ID | int(11)                                                    | NO   | PRI | NULL    | auto_increment |
+| Date     | datetime                                                   | YES  |     | NULL    |                |
+| TOTAL    | int(11)                                                    | YES  |     | NULL    |                |
+| Hens     | int(11)                                                    | YES  |     | NULL    |                |
+| Roosters | int(11)                                                    | YES  |     | NULL    |                |
+| Method   | enum('Harvest','Sickness','Accident','Culling','Predator') | YES  |     | Harvest |                |
++----------+------------------------------------------------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
