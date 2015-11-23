@@ -1,0 +1,39 @@
+mysql> create database hotel
+    -> ;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use hotel
+Database changed
+mysql> 
+mysql> create table Rooms(Room_ID INT AUTO_INCREMENT PRIMARY KEY, Floor INT, For_Rent binary DEFAULT 1, Capacity INT, Carpeted binary, Private_Kitchen binary, Windows INT);                                                                                                   
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> describe Rooms
+    -> ;
++-----------------+-----------+------+-----+---------+----------------+
+| Field           | Type      | Null | Key | Default | Extra          |
++-----------------+-----------+------+-----+---------+----------------+
+| Room_ID         | int(11)   | NO   | PRI | NULL    | auto_increment |
+| Floor           | int(11)   | YES  |     | NULL    |                |
+| For_Rent        | binary(1) | YES  |     | 1       |                |
+| Capacity        | int(11)   | YES  |     | NULL    |                |
+| Carpeted        | binary(1) | YES  |     | NULL    |                |
+| Private_Kitchen | binary(1) | YES  |     | NULL    |                |
+| Windows         | int(11)   | YES  |     | NULL    |                |
++-----------------+-----------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> create table Bookings(Room_ID INT, Start DATETIME, End DATETIME, Number_in_party INT);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe Bookings
+    -> ;
++-----------------+----------+------+-----+---------+-------+
+| Field           | Type     | Null | Key | Default | Extra |
++-----------------+----------+------+-----+---------+-------+
+| Room_ID         | int(11)  | YES  |     | NULL    |       |
+| Start           | datetime | YES  |     | NULL    |       |
+| End             | datetime | YES  |     | NULL    |       |
+| Number_in_party | int(11)  | YES  |     | NULL    |       |
++-----------------+----------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
